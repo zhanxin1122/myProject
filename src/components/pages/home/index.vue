@@ -1,6 +1,6 @@
 <template>
   <div class="main_home">
-    <header>
+    <header :class="{headerShadow: shadowFlag}">
       <div>
         <img :src="require('../../../assets/images/logo2.jpg')" @click="$router.push({name: 'home_main'})"/>
         <div class="nav-box">
@@ -42,6 +42,7 @@ import contentObj from './elevator'
 export default {
   data () {
     return {
+      shadowFlag: false,
       num: 0,
       navs: [{
         label: '关于我们',
@@ -70,8 +71,21 @@ export default {
     NavProducts
   },
   mounted () {
-    document.documentElement.onmouseover = () => {
+    const $html = document.documentElement
+    $html.onmouseover = () => {
       this.navActiveIndex = -1
+    }
+    let time = Date.now()
+    let timer = null
+    window.onscroll = () => {
+      timer && window.clearTimeout(timer)
+      if (time + 1000 < Date.now()) {
+        time = Date.now()
+        this.shadowFlag = $html.scrollTop !== 0
+      }
+      timer = window.setTimeout(() => {
+        this.shadowFlag = $html.scrollTop !== 0
+      }, 300)
     }
   },
   methods: {

@@ -115,7 +115,7 @@ export default {
 @navBgColor: #323133;
 .nav-detail {
   box-sizing: border-box;
-  z-index: 333;
+  z-index: 1000;
   position: fixed;
   left: 50%;
   top: 120px;

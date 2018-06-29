@@ -3,7 +3,6 @@ import Router from 'vue-router'
 import { routes } from './routers'
 
 Vue.use(Router)
-console.log(routes)
 const router = new Router({
   mode: 'hash',
   routes
@@ -11,6 +10,8 @@ const router = new Router({
 
 router.beforeEach((to, from, next) => {
   next()
+  document.documentElement.scrollTop = 0
+  document.getElementsByTagName('header').length !== 0 && document.getElementsByTagName('header')[0].setAttribute('class', '')
 })
 router.afterEach((to, from) => {
 })
