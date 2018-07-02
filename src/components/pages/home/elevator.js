@@ -105,28 +105,28 @@ export const products = [{
 export const resolves = [{
   label: '新电梯解决方案',
   href: '0',
-  img: require('@/assets/images/small.jpg'),
+  img: require('@/assets/images/resolve/fa1.jpg'),
   desc: '在互联网业务飞速发展的背景下，高斯贝尔新一代DTV+OTT系统是针对媒体融合和网络融合的新型解决方案，提供端到端的全套产品，充分利用现有的平台和资源，以用户为核心，针对智能化家庭生活和个性化家...'
 }, {
   label: '旧楼加装电梯解决方案',
   href: '1',
-  img: require('@/assets/images/resolve/jz0.jpg'),
+  img: require('@/assets/images/resolve/fa2.jpg'),
   img_con: [require('@/assets/images/resolve/jz1.png'), require('@/assets/images/resolve/jz2.png')],
   desc: '楼宇加装电梯是一项涉及面广、专业性强的工程，不仅需要电梯公司的专业技术，同时还需要各级政府部门、街道、物业公司、设计单位、施工单位、等多方面的介入和配合...'
 }, {
   label: '旧梯置换解决方案',
   href: '2',
-  img: require('@/assets/images/small.jpg'),
+  img: require('@/assets/images/resolve/fa3.jpg'),
   desc: '在互联网业务飞速发展的背景下，高斯贝尔新一代DTV+OTT系统是针对媒体融合和网络融合的新型解决方案，提供端到端的全套产品，充分利用现有的平台和资源，以用户为核心，针对智能化家庭生活和个性化家...'
 }, {
   label: '电梯及自动扶梯维修保养解决方案',
   href: '3',
-  img: require('@/assets/images/small.jpg'),
+  img: require('@/assets/images/resolve/fa4.jpg'),
   desc: '在互联网业务飞速发展的背景下，高斯贝尔新一代DTV+OTT系统是针对媒体融合和网络融合的新型解决方案，提供端到端的全套产品，充分利用现有的平台和资源，以用户为核心，针对智能化家庭生活和个性化家...'
 }, {
   label: '物联网解决方案',
   href: '4',
-  img: require('@/assets/images/resolve/wlw0.jpg'),
+  img: require('@/assets/images/resolve/fa5.jpg'),
   img_con: [require('@/assets/images/resolve/wlw1.png'), require('@/assets/images/resolve/wlw2.png')],
   desc: '物联网电梯故障报警准确率可达100%，电梯故障全捕捉；电梯困人后，系统自动通知第一责任人，如第一责任人在规定时间内未接警，系统自动通知第二责任人，以此类推，如第三责任人未接警，系统自动...'
 }]
@@ -156,12 +156,12 @@ export const supports = [{
 export const compnews = [{
   label: '公司动态',
   href: '0',
-  img: require('@/assets/images/small.jpg'),
+  img: require('@/assets/images/gsdt.jpg'),
   desc: '企业的最新动态，让您及时了解公司的一些活动计划和公司的发展发现！'
 }, {
   label: '行业新闻',
   href: '1',
-  img: require('@/assets/images/small.jpg'),
+  img: require('@/assets/images/hyxw.jpg'),
   desc: '佐证行业发展，展现品牌崛起，第一时间预告和追踪行业最新展会资讯！'
 }]
 

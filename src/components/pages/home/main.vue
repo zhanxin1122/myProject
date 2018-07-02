@@ -77,13 +77,13 @@ export default {
       hei4: ((screenwidth * 0.3 - 12) / ratio4) - 12,
       sumLeft: 0,
       data0: [{
-        img: require('@/assets/images/home1.png'),
+        img: require('@/assets/images/home1.jpg'),
         href: 'home'
       }, {
-        img: require('@/assets/images/home2.png'),
+        img: require('@/assets/images/home2.jpg'),
         href: 'home'
       }, {
-        img: require('@/assets/images/home3.png'),
+        img: require('@/assets/images/home3.jpg'),
         href: 'home'
       }],
       news: [{

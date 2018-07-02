@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="detail-logo">
-      <img :src="require('@/assets/images/product.png')"/>
+      <img :src="require('@/assets/images/product.jpg')"/>
     </div>
     <div class="detail-content">
       <div class="product-list">

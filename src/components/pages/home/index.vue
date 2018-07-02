@@ -4,7 +4,7 @@
       <div>
         <img :src="require('../../../assets/images/logo2.jpg')" @click="$router.push({name: 'home_main'})"/>
         <div class="nav-box">
-          <img src="../../../assets/images/phone.png"/>
+          <img src="../../../assets/images/phone.jpg"/>
           <ul>
             <li v-if="i !== 3" v-for="(item, i) in navs" :key="`home-nav${i}`" @click="toDetail(item.label)" :class="{'active': navActiveIndex === i}" @mouseover.stop="navActiveIndex = i">{{item.label}}</li>
           </ul>

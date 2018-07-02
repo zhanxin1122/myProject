@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="detail-logo">
-      <img :src="require('@/assets/images/resolve.png')"/>
+      <img :src="require('@/assets/images/resolve.jpg')"/>
     </div>
     <div class="detail-content">
       <div class="resolve-title">{{info.label}}</div>

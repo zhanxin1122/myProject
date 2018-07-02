@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="detail-logo">
-      <img :src="require('@/assets/images/news.png')"/>
+      <img :src="require('@/assets/images/news.jpg')"/>
     </div>
     <div class="detail-content">
       <div class="big-title">{{bigTitle}}</div>

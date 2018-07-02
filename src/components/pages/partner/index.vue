@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="detail-logo">
-      <img :src="require('@/assets/images/partner.png')"/>
+      <img :src="require('@/assets/images/partner.jpg')"/>
     </div>
     <div class="detail-content">
       <div class="big-title mgl">合作伙伴</div>
