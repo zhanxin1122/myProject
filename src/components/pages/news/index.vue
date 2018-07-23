@@ -36,61 +36,31 @@ export default {
         title: '2018年德国ANGA有线电视广播卫星展',
         id: '1',
         time: '2008-08-08',
-        img: require('@/assets/images/small.jpg'),
+        img: require('@/assets/images/resolve/fa2.jpg'),
         desc: '2018年3月22日，第二十六届中国国际广播电视信息网络展览会（简称CCBN 2018）在北京中国国际展览中心正式拉开帷幕。经过26年的不懈奋斗，CCBN已经发...'
       }, {
         title: '2018年德国ANGA有线电视广播卫星展',
         id: '1',
         time: '2008-08-08',
-        img: require('@/assets/images/small.jpg'),
+        img: require('@/assets/images/resolve/fa3.jpg'),
         desc: '2018年3月22日，第二十六届中国国际广播电视信息网络展览会（简称CCBN 2018）在北京中国国际展览中心正式拉开帷幕。经过26年的不懈奋斗，CCBN已经发...'
       }, {
         title: '2018年德国ANGA有线电视广播卫星展',
         id: '1',
         time: '2008-08-08',
-        img: require('@/assets/images/small.jpg'),
+        img: require('@/assets/images/resolve/fa4.jpg'),
         desc: '2018年3月22日，第二十六届中国国际广播电视信息网络展览会（简称CCBN 2018）在北京中国国际展览中心正式拉开帷幕。经过26年的不懈奋斗，CCBN已经发...'
       }, {
         title: '2018年德国ANGA有线电视广播卫星展',
         id: '1',
         time: '2008-08-08',
-        img: require('@/assets/images/small.jpg'),
+        img: require('@/assets/images/resolve/fa5.jpg'),
         desc: '2018年3月22日，第二十六届中国国际广播电视信息网络展览会（简称CCBN 2018）在北京中国国际展览中心正式拉开帷幕。经过26年的不懈奋斗，CCBN已经发...'
       }, {
         title: '2018年德国ANGA有线电视广播卫星展',
         id: '1',
         time: '2008-08-08',
-        img: require('@/assets/images/small.jpg'),
-        desc: '2018年3月22日，第二十六届中国国际广播电视信息网络展览会（简称CCBN 2018）在北京中国国际展览中心正式拉开帷幕。经过26年的不懈奋斗，CCBN已经发...'
-      }, {
-        title: '2018年德国ANGA有线电视广播卫星展',
-        id: '1',
-        time: '2008-08-08',
-        img: require('@/assets/images/small.jpg'),
-        desc: '2018年3月22日，第二十六届中国国际广播电视信息网络展览会（简称CCBN 2018）在北京中国国际展览中心正式拉开帷幕。经过26年的不懈奋斗，CCBN已经发...'
-      }, {
-        title: '2018年德国ANGA有线电视广播卫星展',
-        id: '1',
-        time: '2008-08-08',
-        img: require('@/assets/images/small.jpg'),
-        desc: '2018年3月22日，第二十六届中国国际广播电视信息网络展览会（简称CCBN 2018）在北京中国国际展览中心正式拉开帷幕。经过26年的不懈奋斗，CCBN已经发...'
-      }, {
-        title: '2018年德国ANGA有线电视广播卫星展',
-        id: '1',
-        time: '2008-08-08',
-        img: require('@/assets/images/small.jpg'),
-        desc: '2018年3月22日，第二十六届中国国际广播电视信息网络展览会（简称CCBN 2018）在北京中国国际展览中心正式拉开帷幕。经过26年的不懈奋斗，CCBN已经发...'
-      }, {
-        title: '2018年德国ANGA有线电视广播卫星展',
-        id: '1',
-        time: '2008-08-08',
-        img: require('@/assets/images/small.jpg'),
-        desc: '2018年3月22日，第二十六届中国国际广播电视信息网络展览会（简称CCBN 2018）在北京中国国际展览中心正式拉开帷幕。经过26年的不懈奋斗，CCBN已经发...'
-      }, {
-        title: '2018年德国ANGA有线电视广播卫星展',
-        id: '1',
-        time: '2008-08-08',
-        img: require('@/assets/images/small.jpg'),
+        img: require('@/assets/images/resolve/fa2.jpg'),
         desc: '2018年3月22日，第二十六届中国国际广播电视信息网络展览会（简称CCBN 2018）在北京中国国际展览中心正式拉开帷幕。经过26年的不懈奋斗，CCBN已经发...'
       }],
       pageNum: 2,

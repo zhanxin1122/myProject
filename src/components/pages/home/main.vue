@@ -91,17 +91,17 @@ export default {
         img: require('@/assets/images/service/comp.png'),
         detail: [{
           title: '2018年德国ANGA有线电视广播2018年德国ANGA有线电视广播',
-          img: require('@/assets/images/small.jpg'),
+          img: require('@/assets/images/resolve/fa2.jpg'),
           href: '0',
           desc: '要紧扣十九大精神，中央、省委、市委经济工作会议精神和湖南“两会”精神，聚焦郴州市产业项目发展和三大攻坚战役，全心全意帮扶，助推企业发展；要加强调...'
         }, {
           title: '2018年德国ANGA有线电视广播2018年德国ANGA有线电视广播',
-          img: require('@/assets/images/small.jpg'),
+          img: require('@/assets/images/resolve/fa3.jpg'),
           href: '0',
           desc: '要紧扣十九大精神，中央、省委、市委经济工作会议精神和湖南“两会”精神，聚焦郴州市产业项目发展和三大攻坚战役，全心全意帮扶，助推企业发展；要加强调...'
         }, {
           title: '2018年德国ANGA有2018年德国ANGA有线电视广播线电视广播',
-          img: require('@/assets/images/small.jpg'),
+          img: require('@/assets/images/resolve/fa4.jpg'),
           href: '0',
           desc: '要紧扣十九大精神，中央、省委、市委经济工作会议精神和湖南“两会”精神，聚焦郴州市产业项目发展和三大攻坚战役，全心全意帮扶，助推企业发展；要加强调...'
         }]
@@ -110,17 +110,17 @@ export default {
         img: require('@/assets/images/service/profess.png'),
         detail: [{
           title: '2018年德国AN2018年德国ANGA有线电视广播GA有线电视广播',
-          img: require('@/assets/images/small.jpg'),
+          img: require('@/assets/images/resolve/fa4.jpg'),
           href: '1',
           desc: '要紧扣十九大精神，中央、省委、市委经济工作会议精神和湖南“两会”精神，聚焦郴州市产业项目发展和三大攻坚战役，全心全意帮扶，助推企业发展；要加强调...'
         }, {
           title: '2018年德国ANG2018年德国ANGA有线电视广播A有线电视广播',
-          img: require('@/assets/images/small.jpg'),
+          img: require('@/assets/images/resolve/fa2.jpg'),
           href: '1',
           desc: '要紧扣十九大精神，中央、省委、市委经济工作会议精神和湖南“两会”精神，聚焦郴州市产业项目发展和三大攻坚战役，全心全意帮扶，助推企业发展；要加强调...'
         }, {
           title: '2018年德国ANGA有线2018年德国ANGA有线电视广播电视广播',
-          img: require('@/assets/images/small.jpg'),
+          img: require('@/assets/images/resolve/fa3.jpg'),
           href: '1',
           desc: '要紧扣十九大精神，中央、省委、市委经济工作会议精神和湖南“两会”精神，聚焦郴州市产业项目发展和三大攻坚战役，全心全意帮扶，助推企业发展；要加强调...'
         }]
@@ -128,52 +128,52 @@ export default {
       data1: [{
         label: '发布的一款新一代具体广播级质量的高性价比标清',
         desc: 'GN-1858是高斯贝尔面向广电运营商发布的一款新一代具体广播级质量的高性价比标清MPEG-2/H.264编码器，可有效地进一步降低运营商在前端设备上的成本投入。',
-        img: require('@/assets/images/big.jpg'),
+        img: require('@/assets/images/resolve/fa2.jpg'),
         href: ''
       }, {
         label: '发布的一款新一代具体广播级质量的高性价比标清',
         desc: 'GN-1858是高斯贝尔面向广电运营商发布的一款新一代具体广播级质量的高性价比标清MPEG-2/H.264编码器，可有效地进一步降低运营商在前端设备上的成本投入。',
-        img: require('@/assets/images/big.jpg'),
+        img: require('@/assets/images/resolve/fa3.jpg'),
         href: ''
       }],
       data2: [{
         label: '载货电梯',
-        img: require('@/assets/images/small.jpg'),
+        img: require('@/assets/images/resolve/fa2.jpg'),
         left: '0',
         href: '0-0'
       }, {
         label: '载货电梯',
-        img: require('@/assets/images/big.jpg'),
+        img: require('@/assets/images/resolve/fa3.jpg'),
         left: '25',
         href: '1-0'
       }, {
         label: '载货电梯',
-        img: require('@/assets/images/small.jpg'),
+        img: require('@/assets/images/resolve/fa4.jpg'),
         left: '50',
         href: '2-0'
       }, {
         label: '载货电梯',
-        img: require('@/assets/images/big.jpg'),
+        img: require('@/assets/images/resolve/fa5.jpg'),
         left: '75',
         href: '3-0'
       }, {
         label: '载货电梯',
-        img: require('@/assets/images/small.jpg'),
+        img: require('@/assets/images/resolve/fa2.jpg'),
         left: '100',
         href: '0-0'
       }, {
         label: '载货电梯',
-        img: require('@/assets/images/big.jpg'),
+        img: require('@/assets/images/resolve/fa3.jpg'),
         left: '125',
         href: '1-0'
       }, {
         label: '载货电梯',
-        img: require('@/assets/images/small.jpg'),
+        img: require('@/assets/images/resolve/fa4.jpg'),
         left: '150',
         href: '2-0'
       }, {
         label: '载货电梯',
-        img: require('@/assets/images/big.jpg'),
+        img: require('@/assets/images/resolve/fa5.jpg'),
         left: '175',
         href: '3-0'
       }],

@@ -3,101 +3,101 @@ export const productInfo = ['产品编号', 'Time', '产品介绍']
 export const products = [{
   label: '电梯',
   href: '0-0',
-  img: require('@/assets/images/small.jpg'),
+  img: require('@/assets/images/resolve/fa2.jpg'),
   detail: [{
     name: '住宅电梯',
     href: '0-0',
-    img: require('@/assets/images/small.jpg'),
+    img: require('@/assets/images/resolve/fa2.jpg'),
     content: [' jiutong-h', '2017-05-25', '精装优美']
   }, {
     name: '办公电梯',
     href: '0-1',
-    img: require('@/assets/images/small.jpg'),
+    img: require('@/assets/images/resolve/fa2.jpg'),
     content: [' jiutong-h', '2017-05-25', '精装优美']
   }, {
     name: '商场电梯',
     href: '0-2',
-    img: require('@/assets/images/small.jpg'),
+    img: require('@/assets/images/resolve/fa2.jpg'),
     content: [' jiutong-h', '2017-05-25', '精装优美']
   }, {
     name: '观光电梯',
     href: '0-3',
-    img: require('@/assets/images/small.jpg'),
+    img: require('@/assets/images/resolve/fa2.jpg'),
     content: [' jiutong-h', '2017-05-25', '精装优美']
   }]
 }, {
   label: '自动扶梯和人行道',
   href: '1-0',
-  img: require('@/assets/images/small.jpg'),
+  img: require('@/assets/images/resolve/fa2.jpg'),
   detail: [{
     name: '经济型商用扶梯',
     href: '1-0',
-    img: require('@/assets/images/small.jpg'),
+    img: require('@/assets/images/resolve/fa2.jpg'),
     content: [' jiutong-h', '2017-05-25', '精装优美']
   }, {
     name: '高端型商业扶梯',
     href: '1-1',
-    img: require('@/assets/images/small.jpg'),
+    img: require('@/assets/images/resolve/fa2.jpg'),
     content: [' jiutong-h', '2017-05-25', '精装优美']
   }, {
     name: '公共交通型扶梯',
     href: '1-2',
-    img: require('@/assets/images/small.jpg'),
+    img: require('@/assets/images/resolve/fa2.jpg'),
     content: [' jiutong-h', '2017-05-25', '精装优美']
   }, {
     name: '水平式自动人行道',
     href: '1-3',
-    img: require('@/assets/images/small.jpg'),
+    img: require('@/assets/images/resolve/fa2.jpg'),
     content: [' jiutong-h', '2017-05-25', '精装优美']
   }, {
     name: '倾斜式自动人行道',
     href: '1-4',
-    img: require('@/assets/images/small.jpg'),
+    img: require('@/assets/images/resolve/fa2.jpg'),
     content: [' jiutong-h', '2017-05-25', '精装优美']
   }]
 }, {
   label: '载货电梯',
   href: '2-0',
-  img: require('@/assets/images/small.jpg'),
+  img: require('@/assets/images/resolve/fa2.jpg'),
   detail: [{
     name: '工业厂房专用货梯',
     href: '2-0',
-    img: require('@/assets/images/small.jpg'),
+    img: require('@/assets/images/resolve/fa2.jpg'),
     content: [' jiutong-h', '2017-05-25', '精装优美']
   }, {
     name: '商业中心专用货梯',
     href: '2-1',
-    img: require('@/assets/images/small.jpg'),
+    img: require('@/assets/images/resolve/fa2.jpg'),
     content: [' jiutong-h', '2017-05-25', '精装优美']
   }]
 }, {
   label: '特种电梯',
   href: '3-0',
-  img: require('@/assets/images/small.jpg'),
+  img: require('@/assets/images/resolve/fa2.jpg'),
   detail: [{
     name: '杂货电梯',
     href: '3-0',
-    img: require('@/assets/images/small.jpg'),
+    img: require('@/assets/images/resolve/fa2.jpg'),
     content: [' jiutong-h', '2017-05-25', '精装优美']
   }, {
     name: '传菜电梯',
     href: '3-1',
-    img: require('@/assets/images/small.jpg'),
+    img: require('@/assets/images/resolve/fa2.jpg'),
     content: [' jiutong-h', '2017-05-25', '精装优美']
   }, {
     name: '汽车电梯',
     href: '3-2',
-    img: require('@/assets/images/small.jpg'),
+    img: require('@/assets/images/resolve/fa2.jpg'),
     content: [' jiutong-h', '2017-05-25', '精装优美']
   }, {
     name: '防爆电梯',
     href: '3-3',
-    img: require('@/assets/images/small.jpg'),
+    img: require('@/assets/images/resolve/fa2.jpg'),
     content: [' jiutong-h', '2017-05-25', '精装优美']
   }, {
     name: '液压电梯',
     href: '3-4',
-    img: require('@/assets/images/small.jpg'),
+    img: require('@/assets/images/resolve/fa2.jpg'),
     content: [' jiutong-h', '2017-05-25', '精装优美']
   }]
 }]
