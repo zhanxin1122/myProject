@@ -2,7 +2,7 @@
   <div>
     <el-carousel height="700px" trigger="click" :interval="5000">
       <el-carousel-item v-for="(item, i) in data0" :key="`data0-${i}`">
-        <img class="topImg" :src="item.img" @click="homePage"/>
+        <img class="topImg" alt="通用电梯安装维保有限公司" :src="item.img" @click="homePage"/>
       </el-carousel-item>
     </el-carousel>
     <div class="main-content">
