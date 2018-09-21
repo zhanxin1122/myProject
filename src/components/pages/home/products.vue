@@ -41,10 +41,10 @@
     <div class="news" :class="{'heiAuto': value === 2}" ref="nav_news">
       <div class="detail" v-for="item in compnews" :key="item.label">
         <div>
-          <img :src="item.img"  @click="toDetail('compnews', item.href)"/>
+          <img :src="item.img"  @click="toDetail('compnews', item.href, item.type)"/>
         </div>
         <div>
-          <div class="title"  @click="toDetail('compnews', item.href)">{{item.label}}</div>
+          <div class="title"  @click="toDetail('compnews', item.href, item.type)">{{item.label}}</div>
           <div class="desc">{{item.desc}}</div>
         </div>
       </div>
@@ -94,17 +94,19 @@ export default {
       const width3 = this.$refs.nav_abort.getElementsByTagName('img')[0].clientWidth
       this.hei3 = width3 / ratio3
     },
-    toDetail (name, href) {
+    toDetail (name, href, type) {
+      sessionStorage.setItem('news_list', JSON.stringify(JSON.parse(sessionStorage.getItem('news'))[type]))
       this.$router.push({
         name,
         query: {
-          id: href
+          id: href,
+          type: type || ''
         }
       })
       this.hideNav()
     },
     hideNav () {
-      this.value = -1
+      // this.value = -1
       this.$emit('input', -1)
     }
   }

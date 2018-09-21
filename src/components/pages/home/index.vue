@@ -32,7 +32,7 @@
           <span>扫一扫加入微信</span>
         </div>
       </div>
-      <div class="copyright">Copyright © 2014 - 2018 通用电梯安装维保(广州)有限公司</div>
+      <div class="copyright">Copyright © 2014 - 2018 通用电梯安装维保(广州)有限公司 粤ICP备18068287号</div>
     </footer>
   </div>
 </template>

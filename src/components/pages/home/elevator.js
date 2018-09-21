@@ -156,11 +156,13 @@ export const supports = [{
 export const compnews = [{
   label: '公司动态',
   href: '0',
+  type: 'sort1',
   img: require('@/assets/images/gsdt.jpg'),
   desc: '企业的最新动态，让您及时了解公司的一些活动计划和公司的发展发现！'
 }, {
   label: '行业新闻',
   href: '1',
+  type: 'sort2',
   img: require('@/assets/images/hyxw.jpg'),
   desc: '佐证行业发展，展现品牌崛起，第一时间预告和追踪行业最新展会资讯！'
 }]

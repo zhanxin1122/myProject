@@ -1,5 +1,4 @@
 import axios from 'axios'
-import qs from 'qs'
 import router from '@/router'
 import {
   MessageBox
@@ -7,8 +6,7 @@ import {
 // axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded'
 // 创建实例
 const service = axios.create({
-  // baseURL: 'http://eaf-demo.eafservice.evergrande.com', // 使用代理，不需要这只该项
-  // baseURL: 'http://developer.eafservice.evergrande.com',
+  baseURL: 'http://www.general-elevator.com:3000', // 使用代理，不需要这只该项
   timeout: 30000 // 请求超时时间
 })
 
@@ -41,7 +39,7 @@ service.interceptors.response.use(
   error => {
     let errorInfo = {}
     errorInfo.isResolved = false
-    console.log(error)
+    console.log(JSON.stringify(error))
     let errCode = error.response.status
     errorInfo.errCode = errCode
     if (errCode === 404) {
@@ -67,50 +65,4 @@ service.interceptors.response.use(
   }
 )
 
-const fetch = ({
-  method = 'POST',
-  url,
-  data,
-  params,
-  success = null,
-  fail = null
-}) => {
-  let fetchParam = {
-    url,
-    method
-  }
-  console.log(params)
-  if (data) {
-    fetchParam['data'] = data
-  } else if (params) {
-    fetchParam['params'] = params
-  }
-  if (method === 'PUT') {
-    params = qs.stringify(params)
-    fetchParam = {
-      url,
-      method,
-      data: params
-    }
-  }
-  console.log(fetchParam)
-  service(fetchParam).then(res => {
-    if (res.success) {
-      success(res.data)
-    } else {
-      if (fail) {
-        fail(res)
-      } else {
-        MessageBox.alert(res.message, '服务器错误', {
-          type: 'error'
-        })
-      }
-    }
-  }).catch(error => {
-    MessageBox.alert(error, '服务器异常', {
-      type: 'error'
-    })
-  })
-}
-
-export default fetch
+export default service

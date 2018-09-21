@@ -1,22 +1,34 @@
 <template>
   <div>
-    <el-carousel height="700px" trigger="click" :interval="5000">
-      <el-carousel-item v-for="(item, i) in data0" :key="`data0-${i}`">
-        <img class="topImg" alt="通用电梯安装维保有限公司" :src="item.img" @click="homePage"/>
+    <el-carousel class="self-wid1"
+                 height="700px"
+                 trigger="click"
+                 :interval="5000">
+      <el-carousel-item v-for="(item, i) in data0"
+                        :key="`data0-${i}`">
+        <img class="topImg"
+             alt="通用电梯安装维保有限公司"
+             :src="item.img"
+             @click="homePage" />
       </el-carousel-item>
     </el-carousel>
     <div class="main-content">
       <div class="news">
-        <div class="detail" v-for="(item, j) in news" :key="j">
-          <div class="label"><img :src="item.img"/>{{item.label}}</div>
-          <div class="content" ref="home_news">
+        <div class="detail"
+             v-for="(item, j) in news"
+             :key="j">
+          <div class="label"><img :src="item.img" />{{item.label}}</div>
+          <div class="content"
+               ref="home_news">
             <el-carousel height="200px">
-              <el-carousel-item v-for="(item0, i) in item.detail" :key="i">
+              <el-carousel-item v-for="(item0, i) in item.detail"
+                                :key="i">
                 <div class="img">
-                  <img :src="item0.img"/>
+                  <img :src="item0.img" @click="toNews(item0, item.type)"/>
                 </div>
                 <div class="new-detail">
-                  <div class="title" @click="toNews(item0)">{{item0.title}}</div>
+                  <div class="title"
+                       @click="toNews(item0, item.type)">{{item0.title}}</div>
                   <div class="desc">{{item0.desc}}</div>
                 </div>
               </el-carousel-item>
@@ -26,13 +38,20 @@
       </div>
       <div class="self-scroll">
         <div class="label flex-center">
-          <img :src="require('@/assets/images/service/product.png')"/>
+          <img :src="require('@/assets/images/service/product.png')" />
           <span>产品系列</span>
         </div>
-        <div class="content" ref="home_pro" @mousemove="clearTimer" @mouseout="addTimer">
+        <div class="content"
+             ref="home_pro"
+             @mousemove="clearTimer"
+             @mouseout="addTimer">
           <ul :style="{'transform': `translate(${sumLeft}%)`}">
-            <li v-for="(item, i) in data2" class="flex-center" @click="toPro(item.href)" :key="i" :style="{'left': `${item.left}%`}">
-              <img :src="item.img"/>
+            <li v-for="(item, i) in data2"
+                class="flex-center"
+                @click="toPro(item.href)"
+                :key="i"
+                :style="{'left': `${item.left}%`}">
+              <img :src="item.img" />
               <span>{{item.label}}</span>
             </li>
           </ul>
@@ -40,13 +59,17 @@
       </div>
       <div class="resolve">
         <div class="label flex-center">
-          <img :src="require('@/assets/images/service/resolve.png')"/>
+          <img :src="require('@/assets/images/service/resolve.png')" />
           <span>解决方案</span>
         </div>
         <div class="flex-center jsb">
-          <div v-for="(item, i) in resolves" v-if="resolveIndex.indexOf(i) >= 0" :key="`resolves-${i}`" class="content" @click="toDetail('resolves', item.href)">
+          <div v-for="(item, i) in resolves"
+               v-if="resolveIndex.indexOf(i) >= 0"
+               :key="`resolves-${i}`"
+               class="content"
+               @click="toDetail('resolves', item.href)">
             <div class="img">
-              <img :src="item.img"/>
+              <img :src="item.img" />
             </div>
             <div class="title">{{item.label}}</div>
             <div class="desc">{{item.desc}}</div>
@@ -67,6 +90,9 @@ const ratio3 = 1199 / 220
 // 首页解决方案图片比例
 const ratio4 = 346 / 210
 const screenwidth = document.body.clientWidth
+// 获取新闻接口
+const newsUrl = ['sort1', 'sort2']
+
 let timer = null
 export default {
   data () {
@@ -74,120 +100,146 @@ export default {
       hei1: screenwidth / ratio1 + 'px',
       hei2: (screenwidth / 2 - 85) / ratio2,
       hei3: (screenwidth - 150) / ratio3,
-      hei4: ((screenwidth * 0.3 - 12) / ratio4) - 12,
+      hei4: (screenwidth * 0.3 - 12) / ratio4 - 12,
       sumLeft: 0,
-      data0: [{
-        img: require('@/assets/images/home1.jpg'),
-        href: 'home'
-      }, {
-        img: require('@/assets/images/home2.jpg'),
-        href: 'home'
-      }, {
-        img: require('@/assets/images/home3.jpg'),
-        href: 'home'
-      }],
-      news: [{
-        label: '公司动态',
-        img: require('@/assets/images/service/comp.png'),
-        detail: [{
-          title: '2018年德国ANGA有线电视广播2018年德国ANGA有线电视广播',
+      data0: [
+        {
+          img: require('@/assets/images/home1.jpg'),
+          href: 'home'
+        },
+        {
+          img: require('@/assets/images/home2.jpg'),
+          href: 'home'
+        },
+        {
+          img: require('@/assets/images/home3.jpg'),
+          href: 'home'
+        }
+      ],
+      news: [
+        {
+          label: '公司动态',
+          img: require('@/assets/images/service/comp.png'),
+          type: 'sort1',
+          detail: []
+        },
+        {
+          label: '行业新闻',
+          img: require('@/assets/images/service/profess.png'),
+          type: 'sort2',
+          detail: []
+        }
+      ],
+      data1: [
+        {
+          label: '发布的一款新一代具体广播级质量的高性价比标清',
+          desc:
+            'GN-1858是高斯贝尔面向广电运营商发布的一款新一代具体广播级质量的高性价比标清MPEG-2/H.264编码器，可有效地进一步降低运营商在前端设备上的成本投入。',
           img: require('@/assets/images/resolve/fa2.jpg'),
-          href: '0',
-          desc: '要紧扣十九大精神，中央、省委、市委经济工作会议精神和湖南“两会”精神，聚焦郴州市产业项目发展和三大攻坚战役，全心全意帮扶，助推企业发展；要加强调...'
-        }, {
-          title: '2018年德国ANGA有线电视广播2018年德国ANGA有线电视广播',
+          href: ''
+        },
+        {
+          label: '发布的一款新一代具体广播级质量的高性价比标清',
+          desc:
+            'GN-1858是高斯贝尔面向广电运营商发布的一款新一代具体广播级质量的高性价比标清MPEG-2/H.264编码器，可有效地进一步降低运营商在前端设备上的成本投入。',
           img: require('@/assets/images/resolve/fa3.jpg'),
-          href: '0',
-          desc: '要紧扣十九大精神，中央、省委、市委经济工作会议精神和湖南“两会”精神，聚焦郴州市产业项目发展和三大攻坚战役，全心全意帮扶，助推企业发展；要加强调...'
-        }, {
-          title: '2018年德国ANGA有2018年德国ANGA有线电视广播线电视广播',
-          img: require('@/assets/images/resolve/fa4.jpg'),
-          href: '0',
-          desc: '要紧扣十九大精神，中央、省委、市委经济工作会议精神和湖南“两会”精神，聚焦郴州市产业项目发展和三大攻坚战役，全心全意帮扶，助推企业发展；要加强调...'
-        }]
-      }, {
-        label: '行业新闻',
-        img: require('@/assets/images/service/profess.png'),
-        detail: [{
-          title: '2018年德国AN2018年德国ANGA有线电视广播GA有线电视广播',
-          img: require('@/assets/images/resolve/fa4.jpg'),
-          href: '1',
-          desc: '要紧扣十九大精神，中央、省委、市委经济工作会议精神和湖南“两会”精神，聚焦郴州市产业项目发展和三大攻坚战役，全心全意帮扶，助推企业发展；要加强调...'
-        }, {
-          title: '2018年德国ANG2018年德国ANGA有线电视广播A有线电视广播',
+          href: ''
+        }
+      ],
+      data2: [
+        {
+          label: '载货电梯',
           img: require('@/assets/images/resolve/fa2.jpg'),
-          href: '1',
-          desc: '要紧扣十九大精神，中央、省委、市委经济工作会议精神和湖南“两会”精神，聚焦郴州市产业项目发展和三大攻坚战役，全心全意帮扶，助推企业发展；要加强调...'
-        }, {
-          title: '2018年德国ANGA有线2018年德国ANGA有线电视广播电视广播',
+          left: '0',
+          href: '0-0'
+        },
+        {
+          label: '载货电梯',
           img: require('@/assets/images/resolve/fa3.jpg'),
-          href: '1',
-          desc: '要紧扣十九大精神，中央、省委、市委经济工作会议精神和湖南“两会”精神，聚焦郴州市产业项目发展和三大攻坚战役，全心全意帮扶，助推企业发展；要加强调...'
-        }]
-      }],
-      data1: [{
-        label: '发布的一款新一代具体广播级质量的高性价比标清',
-        desc: 'GN-1858是高斯贝尔面向广电运营商发布的一款新一代具体广播级质量的高性价比标清MPEG-2/H.264编码器，可有效地进一步降低运营商在前端设备上的成本投入。',
-        img: require('@/assets/images/resolve/fa2.jpg'),
-        href: ''
-      }, {
-        label: '发布的一款新一代具体广播级质量的高性价比标清',
-        desc: 'GN-1858是高斯贝尔面向广电运营商发布的一款新一代具体广播级质量的高性价比标清MPEG-2/H.264编码器，可有效地进一步降低运营商在前端设备上的成本投入。',
-        img: require('@/assets/images/resolve/fa3.jpg'),
-        href: ''
-      }],
-      data2: [{
-        label: '载货电梯',
-        img: require('@/assets/images/resolve/fa2.jpg'),
-        left: '0',
-        href: '0-0'
-      }, {
-        label: '载货电梯',
-        img: require('@/assets/images/resolve/fa3.jpg'),
-        left: '25',
-        href: '1-0'
-      }, {
-        label: '载货电梯',
-        img: require('@/assets/images/resolve/fa4.jpg'),
-        left: '50',
-        href: '2-0'
-      }, {
-        label: '载货电梯',
-        img: require('@/assets/images/resolve/fa5.jpg'),
-        left: '75',
-        href: '3-0'
-      }, {
-        label: '载货电梯',
-        img: require('@/assets/images/resolve/fa2.jpg'),
-        left: '100',
-        href: '0-0'
-      }, {
-        label: '载货电梯',
-        img: require('@/assets/images/resolve/fa3.jpg'),
-        left: '125',
-        href: '1-0'
-      }, {
-        label: '载货电梯',
-        img: require('@/assets/images/resolve/fa4.jpg'),
-        left: '150',
-        href: '2-0'
-      }, {
-        label: '载货电梯',
-        img: require('@/assets/images/resolve/fa5.jpg'),
-        left: '175',
-        href: '3-0'
-      }],
+          left: '25',
+          href: '1-0'
+        },
+        {
+          label: '载货电梯',
+          img: require('@/assets/images/resolve/fa4.jpg'),
+          left: '50',
+          href: '2-0'
+        },
+        {
+          label: '载货电梯',
+          img: require('@/assets/images/resolve/fa5.jpg'),
+          left: '75',
+          href: '3-0'
+        },
+        {
+          label: '载货电梯',
+          img: require('@/assets/images/resolve/fa2.jpg'),
+          left: '100',
+          href: '0-0'
+        },
+        {
+          label: '载货电梯',
+          img: require('@/assets/images/resolve/fa3.jpg'),
+          left: '125',
+          href: '1-0'
+        },
+        {
+          label: '载货电梯',
+          img: require('@/assets/images/resolve/fa4.jpg'),
+          left: '150',
+          href: '2-0'
+        },
+        {
+          label: '载货电梯',
+          img: require('@/assets/images/resolve/fa5.jpg'),
+          left: '175',
+          href: '3-0'
+        }
+      ],
       resolves,
       resolveIndex: [0, 1, 4]
     }
   },
   mounted () {
     this.addTimer()
+    this.initNews()
   },
   destroyed () {
     this.clearTimer()
   },
   methods: {
+    // 初始化新闻
+    initNews () {
+      let news = {
+        sort1: null,
+        sort2: null
+      }
+      newsUrl.forEach((item, i) => {
+        this.$fetch({
+          url: '/api/newsList',
+          method: 'GET',
+          params: {
+            news_sort: item
+          }
+        }).then(res => {
+          if (res && res.length !== 0) {
+            this.news[i].detail = res.map(
+              (itemN, j) =>
+                j <= 2 && {
+                  title: itemN.news_title,
+                  img: require(`@/assets/images/resolve/fa${
+                    i === 0 ? j + 2 : 4 - j
+                  }.jpg`),
+                  href: itemN.id,
+                  desc: itemN.new_txt.substr(0, 70) + '...'
+                }
+            )
+            news[item] = res
+            sessionStorage.setItem('news', JSON.stringify(news))
+          }
+        })
+      })
+    },
     interval () {
       this.sumLeft -= 25
       window.setTimeout(() => {
@@ -206,11 +258,9 @@ export default {
       window.location.reload()
     },
     toPage (name) {
-      this.$router.push({name})
+      this.$router.push({ name })
     },
-    more () {
-
-    },
+    more () {},
     toPro (id) {
       this.$router.push({
         name: 'products',
@@ -219,7 +269,8 @@ export default {
         }
       })
     },
-    toNews (item) {
+    toNews (item, type) {
+      sessionStorage.setItem('news_list', JSON.stringify(JSON.parse(sessionStorage.getItem('news'))[type]))
       this.$router.push({
         name: 'newsDetail',
         query: {
@@ -239,37 +290,37 @@ export default {
 }
 </script>
 <style lang="less" scoped>
-.topImg{
+.topImg {
   height: 100%;
   cursor: pointer;
 }
-.main-content{
+.main-content {
   width: 1349px;
   margin: 0 auto;
 }
-.news{
+.news {
   margin-top: 40px;
   height: 250px;
-  .detail{
+  .detail {
     box-sizing: border-box;
     width: 50%;
     float: left;
-    &:first-child{
+    &:first-child {
       padding-left: 75px;
       padding-right: 10px;
     }
-    &:last-child{
+    &:last-child {
       padding-left: 10px;
       padding-right: 75px;
     }
-    .label{
+    .label {
       position: relative;
       color: #333;
       height: 50px;
       line-height: 50px;
       padding-left: 30px;
       font-size: 24px;
-      img{
+      img {
         position: absolute;
         left: -5px;
         top: 7px;
@@ -277,25 +328,26 @@ export default {
         height: 35px;
       }
     }
-    .content{
+    .content {
       height: 200px;
-      .img{
+      .img {
         width: 50%;
         height: 100%;
         float: left;
-        img{
+        img {
           width: 100%;
           height: 100%;
+          cursor: pointer;
         }
       }
-      .new-detail{
+      .new-detail {
         width: 50%;
         height: 100%;
         box-sizing: border-box;
         padding: 20px;
         background-color: #e8e8e8;
         float: left;
-        .title{
+        .title {
           color: #005ba8;
           font-size: 16px;
           font-weight: bold;
@@ -304,11 +356,11 @@ export default {
           overflow: hidden;
           white-space: nowrap;
           text-overflow: ellipsis;
-          &:hover{
+          &:hover {
             color: #d82f2f;
           }
         }
-        .desc{
+        .desc {
           line-height: 24px;
           overflow: hidden;
           font-size: 14px;
@@ -318,33 +370,33 @@ export default {
     }
   }
 }
-.self-carousel{
+.self-carousel {
   margin-top: 50px;
 }
-.self-scroll{
+.self-scroll {
   position: relative;
   margin-top: 50px;
-  .label{
+  .label {
     width: 100%;
     height: 50px;
-    img{
+    img {
       width: 40px;
       height: 40px;
       position: relative;
       top: 1px;
     }
-    span{
+    span {
       margin-left: 5px;
       font-size: 24px;
     }
   }
-  .content{
+  .content {
     overflow: hidden;
     position: relative;
     height: 250px;
     box-sizing: border-box;
     margin: 0 75px;
-    ul{
+    ul {
       position: absolute;
       left: 0;
       top: 0;
@@ -353,8 +405,8 @@ export default {
       transition: transform 0.3s linear;
       backface-visibility: hidden;
       perspective: 1000;
-      transform: translate3d(0,0,0);
-      li{
+      transform: translate3d(0, 0, 0);
+      li {
         cursor: pointer;
         position: absolute;
         top: 0;
@@ -362,11 +414,11 @@ export default {
         flex-direction: column;
         box-sizing: border-box;
         border: 1px solid #fff;
-        img{
+        img {
           width: 100%;
           height: 200px;
         }
-        span{
+        span {
           display: inline-block;
           width: 100%;
           height: 40px;
@@ -380,21 +432,21 @@ export default {
     }
   }
 }
-.products{
+.products {
   height: 660px;
   position: relative;
-  img{
+  img {
     width: 100%;
     height: 100%;
     cursor: pointer;
   }
   .label,
   .desc,
-  .self-btn{
+  .self-btn {
     position: absolute;
     z-index: 10;
   }
-  .label{
+  .label {
     top: 50px;
     width: 100%;
     text-align: center;
@@ -404,11 +456,11 @@ export default {
     text-overflow: ellipsis;
     overflow: hidden;
     cursor: pointer;
-    &:hover{
+    &:hover {
       color: #d82f2f;
     }
   }
-  .desc{
+  .desc {
     top: 120px;
     width: 100%;
     text-align: center;
@@ -419,43 +471,43 @@ export default {
     padding: 0 40px;
   }
 }
-.resolve{
+.resolve {
   box-sizing: border-box;
   margin-top: 60px;
   margin-bottom: 60px;
   padding: 0 75px;
-  .label{
+  .label {
     width: 100%;
     height: 50px;
-    img{
+    img {
       width: 40px;
       position: relative;
       top: 3px;
     }
-    span{
+    span {
       margin-left: 5px;
       font-size: 24px;
     }
   }
-  .jsb{
+  .jsb {
     justify-content: space-between;
   }
-  .content{
+  .content {
     width: 30%;
     height: 100%;
     background-color: #fff;
-    .img{
+    .img {
       width: 100%;
       box-sizing: border-box;
       padding: 6px;
       border: 1px solid #ccc;
-      img{
+      img {
         cursor: pointer;
         width: 100%;
         height: 220px;
       }
     }
-    .title{
+    .title {
       cursor: pointer;
       font-size: 16px;
       color: #005ba8;
@@ -464,11 +516,11 @@ export default {
       text-overflow: ellipsis;
       overflow: hidden;
       margin-top: 10px;
-      &:hover{
+      &:hover {
         color: #d82f2f;
       }
     }
-    .desc{
+    .desc {
       line-height: 24px;
       overflow: hidden;
       color: #666;
