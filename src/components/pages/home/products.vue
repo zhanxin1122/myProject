@@ -1,5 +1,6 @@
 <template>
-  <div class="nav-detail"  @mouseover.stop="() => {}">
+  <div class="nav-detail"
+       @mouseover.stop="() => {}">
     <!-- <div class="product" :class="{'heiAuto': this.value === 5}">
         <div v-for="(item, i) in products" :key="`product-detail${i}`" :class="{'none': activeIndex !== i}">
           <div class="detail flex-center">
@@ -18,48 +19,73 @@
           <li :class="{'actived': activeIndex === i}" :key="`product-label${i}`" v-for="(item, i) in products" @mouseover="activeIndex = i">{{item.label}}</li>
         </ul>
     </div> -->
-    <div class="product" :class="{'heiAuto': this.value === 5}">
-      <div class="detail0 flex-center" v-for="(item, i) in products" :key="`product-detail${i}`">
+    <div class="product"
+         :class="{'heiAuto': this.value === 5}">
+      <div class="detail0 flex-center"
+           v-for="(item, i) in products"
+           :key="`product-detail${i}`">
         <ul>
           <li>{{item.label}}</li>
-          <li v-for="item1 in item.detail" @click="toDetail('products', item1.href)" :key="item1.name">{{item1.name}}</li>
+          <li v-for="item1 in item.detail"
+              @click="toDetail('products', item1.href)"
+              :key="item1.name">{{item1.name}}</li>
         </ul>
       </div>
     </div>
-    <div class="resolve flex-center" ref="nav_resolve" :class="{'heiAuto': value === 4}">
-      <div class="detail flex-center" v-for="item in resolves" @click="toDetail('resolves', item.href)" :key="item.label">
-        <img :src="item.img"/>
+    <div class="resolve flex-center"
+         ref="nav_resolve"
+         :class="{'heiAuto': value === 4}">
+      <div class="detail flex-center"
+           v-for="item in resolves"
+           @click="toDetail('resolves', item.href)"
+           :key="item.label">
+        <img :src="item.img" />
         <span>{{item.label}}</span>
       </div>
     </div>
-    <div class="service flex-center" :class="{'heiAuto': value === 3}">
-      <div class="detail flex-center" v-for="item in supports" :key="item.label">
-        <img :src="item.img"/>
+    <div class="service flex-center"
+         :class="{'heiAuto': value === 3}">
+      <div class="detail flex-center"
+           v-for="item in supports"
+           :key="item.label">
+        <img :src="item.img" />
         <span>{{item.label}}</span>
       </div>
     </div>
-    <div class="news" :class="{'heiAuto': value === 2}" ref="nav_news">
-      <div class="detail" v-for="item in compnews" :key="item.label">
+    <div class="news"
+         :class="{'heiAuto': value === 2}"
+         ref="nav_news">
+      <div class="detail"
+           v-for="item in compnews"
+           :key="item.label">
         <div>
-          <img :src="item.img"  @click="toDetail('compnews', item.href, item.type)"/>
+          <img :src="item.img"
+               @click="toDetail('compnews', item.href, item.type)" />
         </div>
         <div>
-          <div class="title"  @click="toDetail('compnews', item.href, item.type)">{{item.label}}</div>
+          <div class="title"
+               @click="toDetail('compnews', item.href, item.type)">{{item.label}}</div>
           <div class="desc">{{item.desc}}</div>
         </div>
       </div>
     </div>
-    <div class="partner" :class="{'heiAuto': value === 1}"></div>
-    <div class="about flex-center" :class="{'heiAuto': value === 0}" ref="nav_abort">
-      <div class="detail flex-center" v-for="item in aborts" :key="item.label" @click="$router.push({name: item.href})">
-        <img :src="item.img"/>
+    <div class="partner"
+         :class="{'heiAuto': value === 1}"></div>
+    <div class="about flex-center"
+         :class="{'heiAuto': value === 0}"
+         ref="nav_abort">
+      <div class="detail flex-center"
+           v-for="item in aborts"
+           :key="item.label"
+           @click="$router.push({name: item.href})">
+        <img :src="item.img" />
         <span>{{item.label}}</span>
       </div>
     </div>
   </div>
 </template>
 <script>
-import { products, resolves, supports, compnews, aborts } from './elevator'
+import { products, resolves, supports, compnews, aborts } from './elevator';
 // 导航解决方案图片比例
 const ratio1 = 209 / 130
 // 导航新闻图片比例
@@ -87,15 +113,24 @@ export default {
   },
   methods: {
     setImgHeight () {
-      const width1 = this.$refs.nav_resolve.getElementsByTagName('img')[0].clientWidth
+      const width1 = this.$refs.nav_resolve.getElementsByTagName('img')[0]
+        .clientWidth
       this.hei1 = width1 / ratio1
-      const width2 = this.$refs.nav_news.getElementsByTagName('img')[0].clientWidth
+      const width2 = this.$refs.nav_news.getElementsByTagName('img')[0]
+        .clientWidth
       this.hei2 = width2 / ratio2
-      const width3 = this.$refs.nav_abort.getElementsByTagName('img')[0].clientWidth
+      const width3 = this.$refs.nav_abort.getElementsByTagName('img')[0]
+        .clientWidth
       this.hei3 = width3 / ratio3
     },
     toDetail (name, href, type) {
-      sessionStorage.setItem('news_list', JSON.stringify(JSON.parse(sessionStorage.getItem('news'))[type]))
+      console.log(sessionStorage.getItem('news'))
+      type &&
+        JSON.parse(sessionStorage.getItem('news')) &&
+        sessionStorage.setItem(
+          'news_list',
+          JSON.stringify(JSON.parse(sessionStorage.getItem('news'))[type])
+        )
       this.$router.push({
         name,
         query: {
@@ -139,7 +174,7 @@ export default {
   .product {
     overflow: hidden;
     .title {
-      li{
+      li {
         box-sizing: border-box;
         width: 25%;
         height: 60px;
@@ -151,11 +186,11 @@ export default {
         font-size: 20px;
         border-right: 1px solid #666;
         background-color: #29282a;
-        &:last-child{
+        &:last-child {
           border: none;
         }
       }
-      .actived{
+      .actived {
         background-color: #db2f2f;
       }
     }
@@ -164,51 +199,51 @@ export default {
       box-sizing: border-box;
       padding: 30px;
       justify-content: space-around;
-      &>div{
+      & > div {
         width: 50%;
         height: 300px;
       }
-      li{
+      li {
         color: #888;
         font-size: 14px;
         padding: 4px 0;
         cursor: pointer;
-        &:first-child{
+        &:first-child {
           color: #fff;
           font-size: 16px;
           padding: 8px 0;
         }
-        &:hover{
+        &:hover {
           color: red;
         }
       }
-      img{
+      img {
         width: 100%;
         height: 100%;
       }
     }
-    .detail0{
+    .detail0 {
       width: 25%;
       float: left;
       margin: 30px 0;
       box-sizing: border-box;
       border-right: 1px solid #666;
-      &:last-child{
+      &:last-child {
         border: 0;
       }
-      ul{
+      ul {
         height: 165px;
-        li{
+        li {
           cursor: pointer;
           color: #c2c2c2;
           font-size: 14px;
           line-height: 25px;
-          &:first-child{
+          &:first-child {
             color: #fff;
             font-size: 16px;
             line-height: 32px;
           }
-          &:hover{
+          &:hover {
             color: #db2f2f;
           }
         }
@@ -222,48 +257,48 @@ export default {
     justify-content: space-between;
     overflow: hidden;
     padding: 0 20px;
-    .detail{
+    .detail {
       padding-top: 20px;
       width: 18%;
       flex-direction: column;
       cursor: pointer;
-      img{
+      img {
         width: 100%;
         height: 130px;
       }
-      span{
+      span {
         display: inline-block;
         height: 44px;
         color: #fff;
         margin-top: 10px;
         font-size: 14px;
       }
-      &:hover{
-        span{
+      &:hover {
+        span {
           text-decoration: underline;
         }
       }
     }
   }
   .service {
-    .detail{
+    .detail {
       width: 19%;
     }
   }
-  .about{
-    .detail{
+  .about {
+    .detail {
       width: 15%;
-      img{
-        height: 110px;;
+      img {
+        height: 110px;
       }
-      span{
+      span {
         height: 30px;
       }
     }
   }
   .news {
     overflow: hidden;
-    .detail{
+    .detail {
       float: left;
       width: 50%;
       box-sizing: border-box;
@@ -271,33 +306,33 @@ export default {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      &>div{
+      & > div {
         font-size: 14px;
-        &:first-child{
+        &:first-child {
           width: 30%;
         }
-        &:last-child{
+        &:last-child {
           width: 66%;
         }
-        .title{
+        .title {
           color: #fff;
           padding: 10px 0;
           border-bottom: 1px solid #444;
-          &:hover{
+          &:hover {
             cursor: pointer;
             text-decoration: underline;
           }
         }
-        .desc{
+        .desc {
           margin-top: 15px;
           color: #999;
           line-height: 24px;
         }
       }
-      img{
+      img {
         width: 100%;
         height: 120px;
-        &:hover{
+        &:hover {
           cursor: pointer;
         }
       }

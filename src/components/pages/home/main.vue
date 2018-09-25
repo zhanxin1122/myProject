@@ -24,7 +24,8 @@
               <el-carousel-item v-for="(item0, i) in item.detail"
                                 :key="i">
                 <div class="img">
-                  <img :src="item0.img" @click="toNews(item0, item.type)"/>
+                  <img :src="item0.img"
+                       @click="toNews(item0, item.type)" />
                 </div>
                 <div class="new-detail">
                   <div class="title"
@@ -80,7 +81,7 @@
   </div>
 </template>
 <script>
-import { resolves } from './elevator'
+import { resolves } from './elevator';
 // 首页大图片比例
 const ratio1 = 1349 / 700
 // 首页新闻图片比例
@@ -270,7 +271,10 @@ export default {
       })
     },
     toNews (item, type) {
-      sessionStorage.setItem('news_list', JSON.stringify(JSON.parse(sessionStorage.getItem('news'))[type]))
+      sessionStorage.setItem(
+        'news_list',
+        JSON.stringify(JSON.parse(sessionStorage.getItem('news'))[type])
+      )
       this.$router.push({
         name: 'newsDetail',
         query: {
